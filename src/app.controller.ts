@@ -9,8 +9,8 @@ export class AppController {
   constructor(private readonly repoService: RepoService) {}
 
   @Get()
-  async getHello(): Promise<string> {
-    return 'inicio';
+  async default(): Promise<string> {
+    return 'Favor utilizar uma rota válida';
   }
 
   @Get('BuscarProdutos')
