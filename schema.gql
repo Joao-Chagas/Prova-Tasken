@@ -1,0 +1,33 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Produtos {
+  id: Float!
+  NOME_DO_PRODUTO: String!
+  FABRICANTE: String!
+  QUANTIDADE_EM_ESTOQUE: Float!
+  VALOR: Float!
+}
+
+type Query {
+  BuscarProdutos: [Produtos!]!
+  ObterProdutoComMenorEstoque: [Produtos!]
+  BuscarProdutoPorId(id: Float!): Produtos
+}
+
+type Mutation {
+  AdicionarProduto(data: ProdutosInput!): Produtos!
+  DeletarProduto(data: DeleteProduto!): Produtos
+}
+
+input ProdutosInput {
+  nome: String!
+  fabricante: String!
+  qtdEstoque: Float!
+  valor: Float!
+}
+
+input DeleteProduto {
+  id: Float!
+}
