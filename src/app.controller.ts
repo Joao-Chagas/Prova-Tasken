@@ -54,7 +54,7 @@ export class AppController {
   }
 
   @Post('AdicionarProduto')
-  async adiconarProduto(@Body() input: ProdutosInput): Promise<Produtos>{
+  async adicionarProduto(@Body() input: ProdutosInput): Promise<Produtos>{
     console.log(input.nome)
     const produto = this.repoService.produtoRepo.create({NOME_DO_PRODUTO: input.nome, FABRICANTE: input.fabricante, QUANTIDADE_EM_ESTOQUE: input.qtdEstoque, VALOR: input.valor})
     return this.repoService.produtoRepo.save(produto)
